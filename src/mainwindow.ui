@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>894</width>
+    <height>629</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <widget class="QSplitter" name="splitter_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QSplitter" name="splitter">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <widget class="QPlainTextEdit" name="pteGram">
+        <property name="plainText">
+         <string>NSPACE -&gt; namespace &lt;NAMESPACE&gt; SPC COMM_NAME { &lt;LEVEL_U&gt; } &lt;LEVEL_D&gt;
+NSPACE -&gt; namespace &lt;NAMESPACE&gt; SPC COMM_NAME { &lt;LEVEL_U&gt; NSPACE } &lt;LEVEL_D&gt;
+NSPACE -&gt; DEFS &lt;CHECK&gt;
+NSPACE -&gt; NSPACE NSPACE
+NSPACE -&gt; SPC
+ 
+DEFS    -&gt; FUNC_SB &lt;REAL&gt; | FUNC_S &lt;PROTO&gt;
+FUNC_SB -&gt; FUNC { } | FUNC SPC { }  | FUNC { SPC } | FUNC SPC { SPC } 
+FUNC_S  -&gt; FUNC ; 
+ 
+FUNC    -&gt; FUNC_ID SPC ( ) | FUNC_ID SPC ( SPC ) SPC | FUNC_ID ( ) | FUNC_ID ( SPC ) | FUNC_ID ( ) SPC
+FUNC    -&gt; FUNC_ID SPC ( ARG_LIST &lt;CHECKARGLIST&gt; ) SPC | FUNC_ID SPC ( ARG_LIST &lt;CHECKARGLIST&gt; ) | FUNC_ID ( ARG_LIST &lt;CHECKARGLIST&gt; ) SPC | FUNC_ID ( ARG_LIST &lt;CHECKARGLIST&gt; ) 
+ 
+FUNC_ID -&gt; ARG_TYPE &lt;ADDFUNCNAME&gt;
+ 
+ARG_LIST -&gt; ARG_TYPE &lt;ADDPARAM&gt; | ARG_MID
+ARG_MID  -&gt; ARG_TYPE &lt;ADDPARAM&gt; , | ARG_MID ARG_MID | ARG_MID ARG_TYPE &lt;ADDPARAM&gt; | ARG_MID ARG_FL &lt;ADDPARAM&gt;
+ARG_FL   -&gt; SPC DOTS SPC | DOTS SPC | SPC DOTS | DOTS 
+DOTS     -&gt; ... &lt;LIT&gt;
+ 
+ARG_TYPE -&gt; ARG | ARG SPC | SPC ARG | SPC ARG SPC | ARG_PTR 
+ARG_TYPE -&gt; ARG_PTR | ARG_PTR SPC | SPC ARG_PTR | SPC ARG_PTR SPC 
+ARG_TYPE -&gt; ARG_LINK | ARG_LINK SPC | SPC ARG_LINK | SPC ARG_LINK SPC 
+ 
+ARG      -&gt; KEYWORD IDENTIF | void &lt;TYPE&gt; SPC IDENTIF | void &lt;TYPE&gt; SPC | void &lt;TYPE&gt; | KEYWORD | KEYWORD DIGIT_ARRAY | KEYWORD DIGIT_ARRAY SPC 
+
+ARG_PTR  -&gt; KEYWORD AST IDENTIF | KEYWORD AST SPC IDENTIF | void &lt;TYPE&gt; SPC AST IDENTIF | void &lt;TYPE&gt; AST IDENTIF | void &lt;TYPE&gt; SPC AST SPC IDENTIF | void &lt;TYPE&gt; AST SPC IDENTIF | KEYWORD AST | KEYWORD AST SPC | KEYWORD AST DIGIT_ARRAY | KEYWORD AST SPC DIGIT_ARRAY | void &lt;TYPE&gt; SPC AST DIGIT_ARRAY | void &lt;TYPE&gt; AST DIGIT_ARRAY | void &lt;TYPE&gt; SPC AST SPC DIGIT_ARRAY 
+
+ARG_LINK -&gt; KEYWORD AMP IDENTIF | KEYWORD AMP SPC IDENTIF | KEYWORD AMP | KEYWORD AMP SPC 
+AST      -&gt; * &lt;TYPE&gt; | AST AST | AST SPC AST
+AMP      -&gt; &amp; &lt;TYPE&gt;  | AMP AMP | AMP SPC AMP
+ 
+KEYWORD -&gt; int &lt;TYPE&gt; SPC | KEYWORD_MOD_SIZE SPC | KEYWORD_MOD_SIGN SPC | KEYWORD_MOD_SIZE SPC KEYWORD_MOD_SIGN SPC | KEYWORD_MOD_SIGN SPC KEYWORD_MOD_SIZE SPC | KEYWORD_MOD_SIZE SPC int &lt;TYPE&gt; SPC | int &lt;TYPE&gt; SPC KEYWORD_MOD_SIZE SPC | KEYWORD_MOD_SIGN SPC int &lt;TYPE&gt; SPC | int &lt;TYPE&gt; SPC KEYWORD_MOD_SIGN SPC | KEYWORD_MOD_SIGN SPC KEYWORD_MOD_SIZE SPC int &lt;TYPE&gt; SPC | KEYWORD_MOD_SIZE SPC KEYWORD_MOD_SIGN SPC int &lt;TYPE&gt; SPC | KEYWORD_MOD_SIGN SPC int &lt;TYPE&gt; SPC KEYWORD_MOD_SIZE SPC | KEYWORD_MOD_SIZE SPC int &lt;TYPE&gt; SPC KEYWORD_MOD_SIGN SPC | int &lt;TYPE&gt; SPC KEYWORD_MOD_SIGN SPC KEYWORD_MOD_SIZE SPC | int &lt;TYPE&gt; SPC KEYWORD_MOD_SIZE SPC KEYWORD_MOD_SIGN SPC | int &lt;TYPE&gt; | KEYWORD_MOD_SIZE | KEYWORD_MOD_SIGN | KEYWORD_MOD_SIZE SPC KEYWORD_MOD_SIGN | KEYWORD_MOD_SIGN SPC KEYWORD_MOD_SIZE | KEYWORD_MOD_SIZE SPC int &lt;TYPE&gt; | int &lt;TYPE&gt; SPC KEYWORD_MOD_SIZE | KEYWORD_MOD_SIGN SPC int &lt;TYPE&gt; | int &lt;TYPE&gt; SPC KEYWORD_MOD_SIGN | KEYWORD_MOD_SIGN SPC KEYWORD_MOD_SIZE SPC int &lt;TYPE&gt; | KEYWORD_MOD_SIZE SPC KEYWORD_MOD_SIGN SPC int &lt;TYPE&gt; | KEYWORD_MOD_SIGN SPC int &lt;TYPE&gt; SPC KEYWORD_MOD_SIZE | KEYWORD_MOD_SIZE SPC int &lt;TYPE&gt; SPC KEYWORD_MOD_SIGN | int &lt;TYPE&gt; SPC KEYWORD_MOD_SIGN SPC KEYWORD_MOD_SIZE | int &lt;TYPE&gt; SPC KEYWORD_MOD_SIZE SPC KEYWORD_MOD_SIGN 
+
+
+KEYWORD -&gt; char &lt;TYPE&gt; SPC KEYWORD_MOD_SIGN SPC | KEYWORD_MOD_SIGN SPC char &lt;TYPE&gt; SPC| char &lt;TYPE&gt; SPC | char &lt;TYPE&gt; SPC KEYWORD_MOD_SIGN | KEYWORD_MOD_SIGN SPC char &lt;TYPE&gt; | char &lt;TYPE&gt; 
+KEYWORD -&gt; float &lt;TYPE&gt; SPC | double &lt;TYPE&gt; SPC | float &lt;TYPE&gt; | double &lt;TYPE&gt; 
+KEYWORD -&gt; bool &lt;TYPE&gt; SPC | bool &lt;TYPE&gt; 
+
+KEYWORD_MOD_SIGN -&gt; signed &lt;TYPE&gt; | unsigned &lt;TYPE&gt; 
+KEYWORD_MOD_SIZE -&gt; short &lt;TYPE&gt; | long &lt;TYPE&gt; 
+
+COMM_NAME -&gt; COMM_NAME2 &lt;ADDNAMESPACE&gt;&lt;CHECK&gt;
+COMM_NAME2 -&gt; START | START SYMB | START SPC | START SYMB SPC
+IDENTIF -&gt; START | START SYMB | IDENTIF DIGIT_ARRAY
+ 
+SYMB    -&gt; START   | \d &lt;LIT&gt; | SYMB SYMB
+START   -&gt; _ &lt;LIT&gt; | a-z &lt;LIT&gt; | A-Z &lt;LIT&gt; 
+ 
+DIGIT_ARRAY -&gt; [ &lt;LIT&gt; DIGIT_TRIM ] &lt;LIT&gt; | [ &lt;LIT&gt; ] &lt;LIT&gt; | [ &lt;LIT&gt; SPC ] &lt;LIT&gt; | DIGIT_ARRAY DIGIT_ARRAY | DIGIT_ARRAY SPC DIGIT_ARRAY
+DIGIT_TRIM -&gt; DIGIT | SPC DIGIT | DIGIT SPC  | SPC DIGIT SPC
+ 
+DIGIT   -&gt; \d &lt;LIT&gt; | DIGIT DIGIT
+SPC   -&gt; SPC SPC
+SPC   -&gt; \s</string>
+        </property>
+        <property name="placeholderText">
+         <string>Грамматика</string>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="pteInput">
+        <property name="plainText">
+         <string>int f1(int a, double b, char c[10]){}
+int f1(int *a, double b, char c[10]){}
+int f1(int &amp;a, double b, char c[10]){}
+namespace N1 { 
+	namespace N2 { 
+		void f2(void); 
+		void f3(); 
+		int f4(long int, ...);
+		int f4(long int, ...);
+	}
+	void f5(int, unsigned char) {} 
+	void N1(int) {} 
+	void f5(double) {}
+	namespace N2 {
+		void f5(double) {}
+		
+	}
+}</string>
+        </property>
+        <property name="placeholderText">
+         <string>Входные данные для разбора</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QSplitter" name="splitter_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <widget class="QTableView" name="tvTable">
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="pteOutput">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="leResult">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pbWork">
+      <property name="text">
+       <string>Работать</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>894</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="dockWidget">
+   <attribute name="dockWidgetArea">
+    <number>4</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QTableView" name="lvSteps">
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
